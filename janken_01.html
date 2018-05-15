@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<title>宇宙兄弟じゃんけん</title>
+<script>
+$(document).ready(function(){
+//ここにJSを記述
+	var enemy = 0;
+	var my = 0;
+    $(".gu_btn").on("click",function(){
+        var num =Math.floor(Math.random()* 3 + 1);
+        if(num == 3){
+            $(".enemy-zone p").html("<img src='img/gu.png' alt='グー'>").hide().show(500);
+        }
+        if(num == 2){
+            $(".enemy-zone p").html("<img src='img/choki.png' alt='チョキ'>").hide().show(500);
+            $(".my-point p").after("<img src='img/rocket_icon.png' alt='ロケット'>");
+			$(".my-point img").hide().show(500);
+			my ++;if(my == 3){
+				$(".rocket img").animate({
+				"width" : "10px",
+				"height" : "10px"
+				});
+			}
+        }
+        if(num == 1){
+            $(".enemy-zone p").html("<img src='img/pa.png' alt='パー'>").hide().show(500);
+            $(".enemy-point p").after("<img src='img/rocket_icon.png' alt='ロケット'>");
+			$(".my-point img").hide().show(500);
+			enemy ++;if(enemy == 3){
+				$(".rocket img").animate({
+				"width" : "10px",
+				"height" : "10px"
+				});
+			}
+        }
+    })
+    $(".choki_btn").on("click",function(){
+        var num =Math.floor(Math.random()* 3 + 1);
+        if(num == 3){
+            $(".enemy-zone p").html("<img src='img/gu.png' alt='グー'>").hide().show(500);
+            $(".enemy-point p").after("<img src='img/rocket_icon.png' alt='ロケット'>");
+			$(".my-point img").hide().show(500);
+			enemy ++;if(enemy == 3){
+				$(".rocket img").animate({
+				"width" : "10px",
+				"height" : "10px"
+				});
+			}
+        }
+        if(num == 2){
+            $(".enemy-zone p").html("<img src='img/choki.png' alt='チョキ'>").hide().show(500);
+            
+        }
+        if(num == 1){
+            $(".enemy-zone p").html("<img src='img/pa.png' alt='パー'>").hide().show(500);
+            $(".my-point p").after("<img src='img/rocket_icon.png' alt='ロケット'>");
+			$(".my-point img").hide().show(500);
+			my ++;if(my == 3){
+				$(".rocket img").animate({
+				"width" : "10px",
+				"height" : "10px"
+				});
+			}
+        }
+    })
+    $(".pa_btn").on("click",function(){
+        var num =Math.floor(Math.random()* 3 + 1);
+        if(num == 3){
+            $(".enemy-zone p").html("<img src='img/gu.png' alt='グー'>").hide().show(500);
+            $(".my-point p").after("<img src='img/rocket_icon.png' alt='ロケット'>");
+			$(".my-point img").hide().show(500);
+			my ++;if(my == 3){
+				$(".rocket img").animate({
+				"width" : "10px",
+				"height" : "10px"
+				});
+			}
+        }
+        if(num == 2){
+            $(".enemy-zone p").html("<img src='img/choki.png' alt='チョキ'>").hide().show(500);
+            $(".enemy-point p").after("<img src='img/rocket_icon.png' alt='ロケット'>");
+			$(".my-point img").hide().show(500);
+			enemy ++;if(enemy == 3){
+				$(".rocket img").animate({
+				"width" : "10px",
+				"height" : "10px"
+				});
+			}
+        }
+        if(num == 1){
+            $(".enemy-zone p").html("<img src='img/pa.png' alt='パー'>").hide().show(500);
+        }
+    })
+});
+</script>
+</head>
+
+<body>
+    <div class="wrapper">
+    <main>
+        
+        <div class="enemy clearfix">
+        <div class="enemy-point">
+            <p></p>
+            <!--<img src="img/rocket_icon.png" alt="ロケット">
+            <img src="img/rocket_icon.png" alt="ロケット">
+            <img src="img/rocket_icon.png" alt="ロケット">-->
+        </div>
+        
+        <div class="enemy-zone">
+            <p></p>
+        </div>
+        
+        <div class="rocket">
+            <img src="img/rocket.png" alt="ロケット">
+        </div>
+        
+        <div class="mutta">
+            <img src="img/mutta.png" alt="ムッタ">
+        </div>
+        </div>
+        
+        <div class="apo">
+            <img src="img/apo.png" alt="アポ">
+        </div>
+        
+        <div class="my-right">
+            <div class="my-point">
+                <p></p>
+                <!--<img src="img/rocket_icon.png" alt="ロケット">
+                <img src="img/rocket_icon.png" alt="ロケット">
+                <img src="img/rocket_icon.png" alt="ロケット">-->
+            </div>
+
+            <div class="my-zone">
+                <div class="gu_btn">
+                    <img src="img/gu.png" alt="グー">
+                </div>
+                <div class="choki_btn">
+                    <img src="img/choki.png" alt="チョキ">
+                </div>
+                <div class="pa_btn">
+                    <img src="img/pa.png" alt="パー">
+                </div>
+            </div>
+        </div>
+    
+    </main>
+    </div>
+</body>
+</html>
